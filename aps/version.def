@@ -1,0 +1,34 @@
+/******************************************************************************
+* COMPANY       : APS ENGINEERING
+* PROJECT       : LINUX DRIVER
+*******************************************************************************
+* NAME          : version.def
+* DESCRIPTION   : APS library - version information
+* CVS           : $Id: version.def,v 1.19 2009/01/16 16:14:34 pierre Exp $
+*******************************************************************************
+*   Copyright (C) 2006  APS Engineering
+*
+*   This file is part of libaps.
+*
+*   libaps is free software; you can redistribute it and/or
+*   modify it under the terms of the GNU Lesser General Public
+*   License as published by the Free Software Foundation; either
+*   version 2.1 of the License, or (at your option) any later version.
+*
+*   libaps is distributed in the hope that it will be useful,
+*   but WITHOUT ANY WARRANTY; without even the implied warranty of
+*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+*   Lesser General Public License for more details.
+*
+*   You should have received a copy of the GNU Lesser General Public
+*   License along with libaps; if not, write to the Free Software
+*   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*******************************************************************************
+* HISTORY       :
+*   16mar2006   nico    Initial revision
+******************************************************************************/
+
+#define APS_MAJOR       0
+#define APS_MINOR      16
+#define APS_BUGFIX      0
+

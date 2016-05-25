@@ -1,0 +1,221 @@
+APS LINUX DRIVER CHANGELOG
+==========================
+
++ means feature added
+- means feature removed
+* means feature modified
+-------------------------------------------------------------------------------
+Release 0.16.0 (20130211)
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Release 0.16.0 (20130211)
+-------------------------------------------------------------------------------
+* 'libqrencode' is now being used so that QR-barcodes can be printed; QR barcode
+	support is somewhat of a hack right now - see file 'cups/texttoaps.c'
+	for details (basically, the input text stream is monitored for an <ESC '.'>
+	sequence, which is then interpreted as a request to print a QR barcode;
+	note that <ESC '.'> is an otherwise valid control code for some printers,
+	and thhis is the command for printing an image stored in on-board nonvoaltile
+	printer memory; to print a barcode from a user program, the APS library 
+	function cmd_mrs_qrcode() may be used (in 'cups/command.c'); as of time
+	of writing this, a quirk of this function is that the module size of the QR
+	barcode is not passed as a parameter, but is instead hard coded in file
+	'cups/command.c' as the 'QR_SCALE' enumerator, so if you need adjusting the
+	module size, either change the hard coded constant and rebuild (not too good),
+	or introduce the module size as a parameter (better); the sample program
+	'samples/qrsamle.c' shows usage of the qr printing capabilities
+	for any inquires, feel free to contact APS technical support,
+	or write to sshopov@aps-printers-bg.com
+
+-------------------------------------------------------------------------------
+Release 0.15.0 (20120509)
+-------------------------------------------------------------------------------
+* changed state_printing() in the backend (aps.c) to merge
+* the print requests from cups and send them en-masse to the printer; this
+* improves printing speed
+-------------------------------------------------------------------------------
+Release 0.14.0 (20120503)
+-------------------------------------------------------------------------------
+* switched to using libusb
+-------------------------------------------------------------------------------
+Release 0.11.1 (20100519)
+-------------------------------------------------------------------------------
+* fixed broken serial port handshaking handling in aps/serial.c, serial_write_rt()
+
+-------------------------------------------------------------------------------
+Release 0.11 (20090511)
+-------------------------------------------------------------------------------
+
++ ethernet funtionnality
++ const char *aps_get_strerror_full(int errnum,void* port)
++ int     aps_get_sub_error(void *port)
+* internal driver:
+* use function pointer instead of "switch case" for common function.
+* aps_class_t is a merge of aps_port_t and a list of pointer to function to use.
+* "p->XXXX" become "p->port.XXXX" except for "p->open" that become "p->port.is_open"
+-------------------------------------------------------------------------------
+Release 0.10 (2009XXXX)
+-------------------------------------------------------------------------------
+
++ UTF8 encoding feature is possible with a aps_font file
+
+
+-------------------------------------------------------------------------------
+Release 0.9 (20090205)
+-------------------------------------------------------------------------------
+
++ LCB500
+* "font" option changed to "APS_font" to avoid confict with Ps font option.
+
+-------------------------------------------------------------------------------
+Release 0.8 (2008xxxx)
+-------------------------------------------------------------------------------
+
++ option that allow to suppress blank area on top of page (rmtop)
++ detection of EPM205HRS
+* fug in detection of serial printer with a low baudrate fixed
+
+-------------------------------------------------------------------------------
+Release 0.7 (20080609)
+-------------------------------------------------------------------------------
+
++ added specific wait USB state in CUPS aps backend
+  this ensures that USB communication buffers are well flushed at the end of
+  a ticket
+* increased maximum dynamic division from 32 to 64 black bytes
+* increased maximum speed setting to 250mm/s (HSP printers only)
++ added inter-character spacing setting in ppd files
++ added line spacing setting in ppd files
+
+-------------------------------------------------------------------------------
+Release 0.6.6 (20080430)
+-------------------------------------------------------------------------------
+
+* increased number of possible fonts in CUPS ppd files
+
+-------------------------------------------------------------------------------
+Release 0.6.5 (20080417)
+-------------------------------------------------------------------------------
+
+* improved USB write function in APS communication library
+a zero-length packet is sent at the end of each write transaction to make sure
+that the last packet is fully transmitted before returning
+
+-------------------------------------------------------------------------------
+Release 0.6.4 (20080416)
+-------------------------------------------------------------------------------
+
+* properly close USB port in aps CUPS backend on reset
+
+-------------------------------------------------------------------------------
+Release 0.6.3 (20080410)
+-------------------------------------------------------------------------------
+
++ aps backend dumps option to CUPS error log as debug diagnostic
+* corrected bug in set max speed command (endianess issue)
+* modified behaviour of aps CUPS backend when timeout on USB port
+this generates less kernel log messages
+
+-------------------------------------------------------------------------------
+Release 0.6.2 (20080325)
+-------------------------------------------------------------------------------
+
+* modified texttoaps processing state machine ('<<LF>' bug)
+* corrected bug in CUPS aps backend (normal printer reset after timeout using
+USB port wrongly caused the backend to fail)
++ added support for printer-state-reasons (persistent state)
+
+-------------------------------------------------------------------------------
+Release 0.6.1 (20080227)
+-------------------------------------------------------------------------------
+
+- disabled HSP custom serial baudrates (requires kernel hacking)
+* fixed an issue with Linux USB include headers in src/aps/usb.c
+the driver would not compile under Ubuntu 7.10
+
+-------------------------------------------------------------------------------
+Release 0.6 (20080222)
+-------------------------------------------------------------------------------
+* fixed an issue in serial port read/write functions
+select() call modifies its fds arguments which could lead to timeout issues
+>> Thanks to Erik de Castro Lopo (bCODE) for pointing the issue out
+* applied patch to improve error checking in CUPS driver (Erik de Castro Lopo - bCODE)
+* corrected bug in src/cups/command.c in function cmd_set_compression (Erik de Castro Lopo - bCODE)
+* fixed warning in URI parsing routine (Erik de Castro Lopo - bCODE)
+* added more warning report options in Makefiles
+* fixed source code to suppress warnings
++ added checkneop CUPS option (allows disabling NEOP monitoring - disabled by default)
+* changed status polling period down to 100ms in CUPS aps backend
+* corrected timeout handling in wait state of CUPS aps backend
++ added wait state after ticket data has been sent to printer in CUPS aps backend
+this allows the backend to ensure that data has actually been printed and improves reliability of status information
+
+-------------------------------------------------------------------------------
+Release 0.5 (20070302)
+-------------------------------------------------------------------------------
+* reversed changelog order (latest release first)
++ added detection of APS USB vendor ID
++ added USB URI format aps:/proc/bus/usb?type=usb+vid=0x1234+pid=0x1234
+- removed automatic adjustment of kernel FIFO transmit size in serial backend
++ CUPS driver sends adjust FIFO thresholds command for RS232 MRS printers
+
+-------------------------------------------------------------------------------
+Release 0.4 (20061018)
+-------------------------------------------------------------------------------
++ added maximum ticket length option (full cut after specified amount of
+dotlines)
+* remove printing of random characters during autodetection and NEOP status
+query on old firmware revisions (MRS 1.37)
+
+-------------------------------------------------------------------------------
+Release 0.3.2 (20061009)
+-------------------------------------------------------------------------------
++ added NEOP status polling for MRS/HRS/KCP printers in CUPS aps backend
+
+-------------------------------------------------------------------------------
+Release 0.3.1 (20060816)
+-------------------------------------------------------------------------------
+* changed feed and cut sequence order (forward before cut, backward after cut)
+* increased serial and parallel status read timeout to 5s
+* shift amount is reset at end of ticket in rastertoaps backend when needed
+
+-------------------------------------------------------------------------------
+Release 0.3 (20060728)
+-------------------------------------------------------------------------------
+* reorganized source code in CUPS filters and backend
+* status management in aps backend is more robust
++ expanded printer models database to include all current APS printers
++ added HSP printers support
++ added cancel support
++ added page/ticket mode support (stop at last non-blank line)
++ optimized graphics printing in rastertoaps filter
++ added uninstall functionality (make uninstall)
+
+-------------------------------------------------------------------------------
+Release 0.2.1 (20060517)
+-------------------------------------------------------------------------------
+* corrected .ppd files modification dates
+* kernels 2.4 and 2.6 have different definitions for struct
+usbdevfs_ctrltransfer
+* modified Makefiles to allow for command-line CFLAGS and LDFLAGS
+configuration
+
+-------------------------------------------------------------------------------
+Release 0.2 (20060503)
+-------------------------------------------------------------------------------
+* updated driver_faq.pdf (CUPS driver problems)
++ added libaps parallel port backend
++ added libaps USB port backend
+* corrected bug in backends for timeouts greater than 1 second
++ added printing timeout support
++ added preliminary support for status reporting in CUPS driver
+- moved FAQ document to a separate project (linux_driver_faq)
++ added model CP324HRSW (640 dots)
+
+-------------------------------------------------------------------------------
+Release 0.1 (20060320)
+-------------------------------------------------------------------------------
++ initial revision
+
+

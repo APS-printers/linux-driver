@@ -1,0 +1,237 @@
+//=============================================================================
+// COMPANY       : APS ENGINEERING
+// PROJECT       : LINUX DRIVER
+//=============================================================================
+// NAME          : aps.drv
+// DESCRIPTION   : Definition of PPD files for APS printers
+// CVS           : $Id: aps.drv,v 1.21 2009/01/16 16:14:35 pierre Exp $
+//=============================================================================
+//   Copyright (C) 2006  APS Engineering
+//   
+//   This file is part of the APS Linux Driver.
+//
+//   APS Linux Driver is free software; you can redistribute it and/or modify
+//   it under the terms of the GNU General Public License as published by
+//   the Free Software Foundation; either version 2 of the License, or
+//   (at your option) any later version.
+//
+//   APS Linux Driver is distributed in the hope that it will be useful,
+//   but WITHOUT ANY WARRANTY; without even the implied warranty of
+//   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//   GNU General Public License for more details.
+//
+//   You should have received a copy of the GNU General Public License
+//   along with APS Linux Driver; if not, write to the Free Software
+//   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+//=============================================================================
+// HISTORY       :
+//   31jan2006   nico    Initial revision
+//   21avr2006   nico    Added parallel port settings
+//               nico    Added timeout settings
+//   05may2006   nico    Added CP324HRSW model
+//   15may2006   nico    Added EPM, BPM and HSP models
+//   09jun2006   nico    Added page mode option
+//   28jul2006   nico    Changed page length to 29.7cm (A4)
+//   16aug2006   nico    Changed forward feed/backward feed descriptions
+//   11oct2006   nico    Added maximum ticket length option
+//   22feb2008   nico    Added NEOP checking enable/disable option
+//   30apr2008   nico    Increased number of possible fonts
+//   09jun2008   nico    Added inter-character spacing option
+//                       Added line spacing option
+//=============================================================================
+
+#include <font.defs>
+#include <media.defs>
+
+#include "aps_common.defs"
+
+#include "aps_option.defs"
+
+// MRS printers definition ----------------------------------------------------
+
+{
+  ModelName "CP290MRS"
+  ModelNumber $MODEL_CP290MRS
+  PCFileName "cp290mrs.ppd"
+  *MediaSize Roll60mm
+}
+
+{
+  ModelName "CP324MRS"
+  ModelNumber $MODEL_CP324MRS
+  PCFileName "cp324mrs.ppd"
+  *MediaSize Roll82.5mm
+}
+
+{
+  ModelName "CP424MRS"
+  ModelNumber $MODEL_CP424MRS
+  PCFileName "cp424mrs.ppd"
+  *MediaSize Roll114mm
+}
+
+{
+  ModelName "CP295MRS"
+  ModelNumber $MODEL_CP295MRS
+  PCFileName "cp295mrs.ppd"
+  *MediaSize Roll60mm
+}
+
+{
+  ModelName "CP305MRS"
+  ModelNumber $MODEL_CP305MRS
+  PCFileName "cp305mrs.ppd"
+  *MediaSize Roll80mm
+}
+
+{
+  ModelName "CP405MRS"
+  ModelNumber $MODEL_CP405MRS
+  PCFileName "cp405mrs.ppd"
+  *MediaSize Roll114mm
+}
+
+{
+  ModelName "CP205MRS"
+  ModelNumber $MODEL_CP205MRS
+  PCFileName "cp205mrs.ppd"
+  *MediaSize Roll58mm
+}
+
+{
+  ModelName "EPM205MRS"
+  ModelNumber $MODEL_EPM205MRS
+  PCFileName "epm205mrs.ppd"
+  *MediaSize Roll58mm
+}
+
+{
+  ModelName "EPM224MRS"
+  ModelNumber $MODEL_EPM224MRS
+  PCFileName "epm224mrs.ppd"
+  *MediaSize Roll58mm
+}
+
+{
+  ModelName "EPM203MRS"
+  ModelNumber $MODEL_EPM203MRS
+  PCFileName "epm203mrs.ppd"
+  *MediaSize Roll58mm
+}
+
+{
+  ModelName "BPM205"
+  ModelNumber $MODEL_BPM205
+  PCFileName "bpm205.ppd"
+  *MediaSize Roll58mm
+}
+
+{
+  ModelName "BPM224L"
+  ModelNumber $MODEL_BPM224L
+  PCFileName "bpm224l.ppd"
+  *MediaSize Roll58mm
+}
+
+{
+  ModelName "BPM224"
+  ModelNumber $MODEL_BPM224
+  PCFileName "bpm224.ppd"
+  *MediaSize Roll58mm
+}
+
+// HRS printers definition ----------------------------------------------------
+
+{
+  ModelName "CP290HRS"
+  ModelNumber $MODEL_CP290HRS
+  PCFileName "cp290hrs.ppd"
+  *MediaSize Roll60mm
+}
+
+{
+  ModelName "CP324HRS"
+  ModelNumber $MODEL_CP324HRS
+  PCFileName "cp324hrs.ppd"
+  *MediaSize Roll82.5mm
+}
+
+{
+  ModelName "CP324HRSW"
+  ModelNumber $MODEL_CP324HRSW
+  PCFileName "cp324hrsw.ppd"
+  *MediaSize Roll82.5mm
+}
+
+{
+  ModelName "CP424HRS"
+  ModelNumber $MODEL_CP424HRS
+  PCFileName "cp424hrs.ppd"
+  *MediaSize Roll114mm
+}
+
+{
+  ModelName "EPM205HRS"
+  ModelNumber $MODEL_EPM205HRS
+  PCFileName "epm205hrs.ppd"
+  *MediaSize Roll58mm
+}
+
+{
+  ModelName "EPM207HRS"
+  ModelNumber $MODEL_EPM207HRS
+  PCFileName "epm207hrs.ppd"
+  *MediaSize Roll58mm
+}
+
+{
+  ModelName "LCB500"
+  ModelNumber $MODEL_LCB500
+  PCFileName "lcb500.ppd"
+  *MediaSize Roll80mm
+}
+
+{
+  ModelName "LPM_driver_board"
+  ModelNumber $MODEL_LPM400
+  PCFileName "lpm400.ppd"
+  *MediaSize Roll60mm
+}
+
+// KCP printers definition ----------------------------------------------------
+
+{
+  ModelName "KCP200"
+  ModelNumber $MODEL_KCP200
+  PCFileName "kcp200.ppd"
+  *MediaSize Roll60mm
+}
+
+// HSP printers definition ----------------------------------------------------
+
+{
+  ModelName "FCB500"
+  ModelNumber $MODEL_FCB500
+  PCFileName "fcb500.ppd"
+  *MediaSize Roll82.5mm
+  MediaSize  Roll60mm
+}
+
+{
+  ModelName "HSP3100FC"
+  ModelNumber $MODEL_HSP3100FC
+  PCFileName "hsp3100fc.ppd"
+  *MediaSize Roll82.5mm
+}
+
+{
+  ModelName "POS1525"
+  ModelNumber $MODEL_POS1525
+  PCFileName "pos1525.ppd"
+  *MediaSize Roll82.5mm
+}
+
+// end of file ----------------------------------------------------------------
+
+
+

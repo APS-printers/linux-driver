@@ -1,0 +1,20 @@
+open file aps/models.def
+    => add a define "printe_name" "USB product ID"
+
+open file aps/models.c
+    => add new line 
+    printer define , 
+    type (APS_HRS, ... ),
+    with in pixel,
+    printer name to show
+    ID: printer identefiction name
+
+open drv/aps.drv    
+    => copy a printer section in order to add a new one and 
+    change all needed parameter
+
+open drv/Makefile
+    => add the new model in models variable 
+
+
+

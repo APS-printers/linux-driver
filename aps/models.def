@@ -1,0 +1,65 @@
+/******************************************************************************
+* COMPANY       : APS ENGINEERING
+* PROJECT       : LINUX DRIVER
+*******************************************************************************
+* NAME          : models.def
+* DESCRIPTION   : APS library - definition of printers models
+* CVS           : $Id: models.def,v 1.7 2009/01/16 16:14:34 pierre Exp $
+*******************************************************************************
+*   Copyright (C) 2006  APS Engineering
+*
+*   This file is part of libaps.
+*
+*   libaps is free software; you can redistribute it and/or
+*   modify it under the terms of the GNU Lesser General Public
+*   License as published by the Free Software Foundation; either
+*   version 2.1 of the License, or (at your option) any later version.
+*
+*   libaps is distributed in the hope that it will be useful,
+*   but WITHOUT ANY WARRANTY; without even the implied warranty of
+*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+*   Lesser General Public License for more details.
+*
+*   You should have received a copy of the GNU Lesser General Public
+*   License along with libaps; if not, write to the Free Software
+*   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*******************************************************************************
+* HISTORY       :
+*   07feb2006   nico    Initial revision
+******************************************************************************/
+
+#define MODEL_UNKNOWN           0
+
+#define MODEL_CP290MRS          0x1000
+#define MODEL_CP324MRS          0x1001
+#define MODEL_CP424MRS          0x1002
+#define MODEL_CP295MRS          0x1003
+#define MODEL_CP305MRS          0x1004
+#define MODEL_CP405MRS          0x1005
+#define MODEL_CP205MRS          0x1006
+#define MODEL_EPM205MRS         0x1007
+#define MODEL_EPM224MRS         0x1008
+#define MODEL_EPM203MRS         0x1009
+#define MODEL_BPM205            0x100a
+#define MODEL_BPM224L           0x100b
+#define MODEL_BPM224            0x100c
+
+#define MODEL_CP290HRS          0x2000
+#define MODEL_CP324HRS          0x2001
+#define MODEL_CP424HRS          0x2002
+#define MODEL_CP324HRSW         0x2003
+#define MODEL_EPM205HRS         0x2004
+#define MODEL_EPM207HRS         0x2005
+
+#define MODEL_KCP200            0x3000
+
+#define MODEL_HSP3100FC         0x4000
+#define MODEL_POS1525           0x4001
+#define MODEL_FCB500            0x4002
+
+#define MODEL_LCB500            0x4010
+
+#define MODEL_LPM400            0x4020
+
+#define MODEL_INVALID           -1
+
