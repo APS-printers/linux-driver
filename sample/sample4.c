@@ -16,6 +16,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+#define _IPP_PRIVATE_STRUCTURES		1
+
 #include <cups/cups.h>
 #include <cups/language.h>
 
