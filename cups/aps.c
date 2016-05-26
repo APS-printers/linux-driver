@@ -350,15 +350,19 @@ static void list_devices(void)
     int n;
     int i;
 
-    n = aps_detect_printers(printers,PRINTERS_MAX);
+    fprintf(stderr,"DEBUG: aps detecting printers\n");
+    //n = aps_detect_printers(printers,PRINTERS_MAX);
+    n = 0;
 
     if (n==0) {
         /*allow manual configuration*/
+	    fprintf(stderr,"DEBUG: aps allowing manual\n");
         printf("direct aps \"unknown\" \"APS printer\"\n");
     }
     else {
         for (i=0; i<n; i++) {
             /*device class|device URI|model|description*/
+	    fprintf(stderr,"DEBUG: aps detected printer %s\n", printers[i].uri);
             printf("direct %s \"%s\" \"%s\"\n",
                    printers[i].uri,
                    aps_get_model_name(printers[i].model),
@@ -1044,6 +1048,7 @@ int main(int argc,char** argv)
 
     /*check arguments*/
     if (argc==1) {
+	    fprintf(stderr,"DEBUG: aps listing devices\n");
         list_devices();
         return 0;
     }
