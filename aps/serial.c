@@ -86,7 +86,7 @@
  * - Recompile the kernel to enable support of the new custom baudrates
  */
 
-#define SERIAL_DEFBAUDRATE      APS_B9600
+#define SERIAL_DEFBAUDRATE      APS_B115200
 #define SERIAL_DEFHANDSHAKE     APS_RTSCTS
 
 static  void    serial_timer(int);
@@ -518,6 +518,8 @@ Return    :  APS_OK or error code
 int serial_set_baudrate(aps_port_t *p,int baudrate)
 {
         struct termios set;
+
+	baudrate = APS_B115200;
 
         if (tcgetattr(p->set.serial.fd,&set)<0) {
                 return APS_IO_ERROR;
