@@ -1,16 +1,16 @@
 *PPD-Adobe: "4.3"
-*%%%% PPD file for CP295MRS with CUPS.
+*%%%% PPD file for ECP212 with CUPS.
 *%%%% Created by the CUPS PPD Compiler CUPS v1.7.5.
 *FormatVersion: "4.3"
 *FileVersion: "0.16.0"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
-*PCFileName: "cp295mrs.ppd"
-*Product: "(CP295MRS)"
+*PCFileName: "ecp212.ppd"
+*Product: "(ECP212)"
 *Manufacturer: "APS"
-*ModelName: "APS CP295MRS"
-*ShortNickName: "APS CP295MRS"
-*NickName: "APS CP295MRS, 0.16.0"
+*ModelName: "APS ECP212"
+*ShortNickName: "APS ECP212"
+*NickName: "APS ECP212, 0.16.0"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: False
@@ -20,25 +20,25 @@
 *LandscapeOrientation: Plus90
 *TTRasterizer: Type42
 *cupsVersion: 1.7
-*cupsModelNumber: 4099
+*cupsModelNumber: 8208
 *cupsManualCopies: False
 *cupsFilter: "application/vnd.cups-raster 100 rastertoaps"
 *cupsFilter: "text/plain 100 texttoaps"
 *cupsLanguages: "en"
 *OpenUI *PageSize/Media Size: PickOne
 *OrderDependency: 10 AnySetup *PageSize
-*DefaultPageSize: Roll60mm
-*PageSize Roll60mm/Paper roll 60mm (2 inches): "<</PageSize[153 842]/ImagingBBox null>>setpagedevice"
+*DefaultPageSize: Roll82.5mm
+*PageSize Roll82.5mm/Paper roll 82.5mm (3 inches): "<</PageSize[227 842]/ImagingBBox null>>setpagedevice"
 *CloseUI: *PageSize
 *OpenUI *PageRegion/Media Size: PickOne
 *OrderDependency: 10 AnySetup *PageRegion
-*DefaultPageRegion: Roll60mm
-*PageRegion Roll60mm/Paper roll 60mm (2 inches): "<</PageSize[153 842]/ImagingBBox null>>setpagedevice"
+*DefaultPageRegion: Roll82.5mm
+*PageRegion Roll82.5mm/Paper roll 82.5mm (3 inches): "<</PageSize[227 842]/ImagingBBox null>>setpagedevice"
 *CloseUI: *PageRegion
-*DefaultImageableArea: Roll60mm
-*ImageableArea Roll60mm/Paper roll 60mm (2 inches): "0 0 153.070877075195 841.889770507812"
-*DefaultPaperDimension: Roll60mm
-*PaperDimension Roll60mm/Paper roll 60mm (2 inches): "153.070877075195 841.889770507812"
+*DefaultImageableArea: Roll82.5mm
+*ImageableArea Roll82.5mm/Paper roll 82.5mm (3 inches): "0 0 226.771667480469 841.889770507812"
+*DefaultPaperDimension: Roll82.5mm
+*PaperDimension Roll82.5mm/Paper roll 82.5mm (3 inches): "226.771667480469 841.889770507812"
 *OpenUI *Resolution/Resolution: PickOne
 *OrderDependency: 10 AnySetup *Resolution
 *DefaultResolution: 203dpi
@@ -1450,4 +1450,4 @@
 *Font Times-Roman: Standard "(1.05)" Standard ROM
 *Font ZapfChancery-MediumItalic: Standard "(1.05)" Standard ROM
 *Font ZapfDingbats: Special "(001.005)" Special ROM
-*% End of cp295mrs.ppd, 50697 bytes.
+*% End of ecp212.ppd, 50707 bytes.

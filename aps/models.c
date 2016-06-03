@@ -56,6 +56,9 @@ static const model_t models_table[] = {
 {MODEL_CP290HRS,    APS_HRS,      432,  "CP290HRS",   "CP290HRS"},
 {MODEL_CP324HRSW,   APS_HRS,      640,  "CP324HRSW",  "CP324HRS         W"},
 {MODEL_CP324HRS,    APS_HRS,      576,  "CP324HRS",   "CP324HRS"},
+
+{MODEL_ECP212,    APS_HRS,      672,  "ECP212",   "PMC ECP312"},
+
 {MODEL_CP424HRS,    APS_HRS,      864,  "CP424HRS",   "CP424HRS"},
 {MODEL_KCP200,      APS_KCP,      432,  "KCP200",     "KCP200"},
 

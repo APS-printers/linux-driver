@@ -18,6 +18,7 @@ models=cp290mrs.ppd \
        bpm224.ppd \
        cp290hrs.ppd \
        cp324hrs.ppd \
+       ecp212.ppd \
        cp324hrsw.ppd \
        cp424hrs.ppd \
        epm205hrs.ppd \

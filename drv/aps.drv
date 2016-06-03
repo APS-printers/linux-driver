@@ -157,6 +157,13 @@
 }
 
 {
+  ModelName "ECP212"
+  ModelNumber $MODEL_ECP212
+  PCFileName "ecp212.ppd"
+  *MediaSize Roll82.5mm
+}
+
+{
   ModelName "CP324HRSW"
   ModelNumber $MODEL_CP324HRSW
   PCFileName "cp324hrsw.ppd"

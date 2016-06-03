@@ -46,6 +46,7 @@
 
 #define MODEL_CP290HRS          0x2000
 #define MODEL_CP324HRS          0x2001
+#define MODEL_ECP212            0x2010
 #define MODEL_CP424HRS          0x2002
 #define MODEL_CP324HRSW         0x2003
 #define MODEL_EPM205HRS         0x2004
