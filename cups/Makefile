@@ -36,14 +36,15 @@ clean:
 	@$(RM) *.o $(TARGETS)
 
 install:
-	@$(INSTALL) -s aps $(backenddir)
+	mkdir -p $(DESTDIR)$(backenddir) $(DESTDIR)$(filterdir)
+	@$(INSTALL) -s aps $(DESTDIR)$(backenddir)
 #	@$(INSTALL) -s utf8toaps $(filterdir)
-	@$(INSTALL) -s rastertoaps $(filterdir)
-	@$(INSTALL) -s texttoaps $(filterdir)
+	@$(INSTALL) -s rastertoaps $(DESTDIR)$(filterdir)
+	@$(INSTALL) -s texttoaps $(DESTDIR)$(filterdir)
 	
 uninstall:
-	@$(RM) $(backenddir)/aps
-	@$(RM) $(filterdir)/rastertoaps
-	@$(RM) $(filterdir)/texttoaps
+	@$(RM) $(DESTDIR)$(backenddir)/aps
+	@$(RM) $(DESTDIR)$(filterdir)/rastertoaps
+	@$(RM) $(DESTDIR)$(filterdir)/texttoaps
 #	@$(RM) $(filterdir)/utf8toaps
 
