@@ -50,15 +50,16 @@ purge_ppd:
 
 install:
 	@echo "Install PPD files ..."
+	@mkdir -p $(DESTDIR)$(modeldir)
 	@for model in $(models); do\
 		echo Installing printer model $$model... ;\
-		$(INSTALL) -m 644 $(ppddir)/$$model $(modeldir) || exit 1;\
+		$(INSTALL) -m 644 $(ppddir)/$$model $(DESTDIR)$(modeldir) || exit 1;\
 	done
 
 uninstall:
 	@echo "Unrinstall PPD files ..."
 	@for model in $(models); do\
 		echo Uninstalling printer model $$model... ;\
-		$(RM) $(modeldir)/$$model ;\
+		$(RM) $(DESTDIR)$(modeldir)/$$model ;\
 	done
 

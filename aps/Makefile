@@ -38,11 +38,12 @@ clean:
 	$(RM) *.o *~ $(TARGETS)
 
 install:
-	$(INSTALL) libaps.a $(libdir)
-	$(INSTALL) -d $(includedir)/aps
-	$(INSTALL) -m 644 models.def version.def aps.h version.h $(includedir)/aps
+	mkdir -p $(DESTDIR)$(libdir)
+	$(INSTALL) libaps.a $(DESTDIR)$(libdir)
+	$(INSTALL) -d $(DESTDIR)$(includedir)/aps
+	$(INSTALL) -m 644 models.def version.def aps.h version.h $(DESTDIR)$(includedir)/aps
 
 uninstall:
-	$(RM) $(libdir)/libaps.a
-	$(RM) -r $(includedir)/aps
+	$(RM) $(DESTDIR)$(libdir)/libaps.a
+	$(RM) -r $(DESTDIR)$(includedir)/aps
 
